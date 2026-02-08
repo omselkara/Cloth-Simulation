@@ -101,12 +101,13 @@ Each frame performs the following steps:
 
 **Verlet Integration:**
 ```processing
-float vx = x - px;     // Calculate velocity
-float vy = y - py;
-px = x;                // Store current position as previous
-py = y;
-x += vx;               // Update position with velocity
-y += vy + gravity * deltatime;  // Apply gravity
+float bx = x;          // Store current position
+float by = y;
+x += x - px;           // Update position (velocity is implicit)
+y += y - py;
+y += gravity * deltatime;  // Apply gravity
+px = bx;               // Update previous position
+py = by;
 ```
 
 **Distance Constraints:**
