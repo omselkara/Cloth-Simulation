@@ -111,7 +111,7 @@ y += vy + gravity * deltatime;  // Apply gravity
 
 **Distance Constraints:**
 ```processing
-float distance = dist(p1, p2);
+float distance = dist(p1.x, p1.y, p2.x, p2.y);
 float cx = (p1.x + p2.x) / 2;     // Center point
 float cy = (p1.y + p2.y) / 2;
 // Move points apart or together to maintain distance
